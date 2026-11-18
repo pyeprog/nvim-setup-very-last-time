@@ -25,7 +25,8 @@ vim.keymap.set("n", "=p", "<Plug>(YankyPutAfterFilter)")
 vim.keymap.set("n", "=P", "<Plug>(YankyPutBeforeFilter)")
 vim.keymap.set("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
 vim.keymap.set("n", "<c-n>", "<Plug>(YankyNextEntry)")
-
--- Emacs-style cursor movement in Insert mode
+-- ToggleTerm
+vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+-- Extra Emacs-style cursor movement in Insert mode
 vim.keymap.set("i", "<C-n>", "<Down>")
 vim.keymap.set("i", "<C-p>", "<Up>")

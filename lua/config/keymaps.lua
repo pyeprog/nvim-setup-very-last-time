@@ -27,6 +27,13 @@ vim.keymap.set("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
 vim.keymap.set("n", "<c-n>", "<Plug>(YankyNextEntry)")
 -- ToggleTerm
 vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+vim.keymap.set("n", "<leader>e", function()
+  vim.ui.input({ prompt = "Shell command: " }, function(cmd)
+    if cmd and cmd ~= "" then
+      require("toggleterm").exec(cmd)
+    end
+  end)
+end, { desc = "Run command in ToggleTerm" })
 -- Extra Emacs-style cursor movement in Insert mode
 vim.keymap.set("i", "<C-n>", "<Down>")
 vim.keymap.set("i", "<C-p>", "<Up>")

@@ -27,8 +27,11 @@ vim.keymap.set("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
 vim.keymap.set("n", "<c-n>", "<Plug>(YankyNextEntry)")
 -- ToggleTerm
 vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
-vim.keymap.set("n", "<leader>e", function()
-  vim.ui.input({ prompt = "Shell command: " }, function(cmd)
+vim.keymap.set("n", [[<C-\><C-e>]], function()
+  vim.ui.input({
+    prompt = "Shell command: ",
+    completion = "shellcmdline",
+  }, function(cmd)
     if cmd and cmd ~= "" then
       require("toggleterm").exec(cmd)
     end
